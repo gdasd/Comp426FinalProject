@@ -7,10 +7,6 @@ class User {
         this.score = score;
     }
 
-    info () {
-        return this;
-    }
-
     update (score, pass) {
         if (score != null) {
             console.log("here")
