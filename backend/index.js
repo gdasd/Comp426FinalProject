@@ -111,9 +111,9 @@ app.get('/users', (req, res) => {
 
     // to give you users for the leaderboard, I'll sort the users by score (descending) and send it
     console.log("we here")
-    let sortedNames = User.getAllUsers()
-    console.log(sortedNames)
-    sortedNames = sortedNames.sort((a, b) => parseInt(b.score) - parseInt(a.score));
+    let sortedUsers = User.getAllUsers()
+    console.log(sortedUsers)
+    sortedUsers = sortedNames.sort((a, b) => parseInt(b.score) - parseInt(a.score));
 
     res.json(sortedNames);
     return;
