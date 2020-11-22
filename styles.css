@@ -1,0 +1,47 @@
+body {
+    background-color: #333;
+}
+
+#tetris_logo {
+    display: block;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 200px;
+    padding: 10px;
+}
+
+#game_over {
+    max-width: 200px;
+}
+
+.header {
+    text-align: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 600px;
+    margin: auto auto;
+    width: 360px;
+}
+
+.grid div {
+    background-color: #fff;
+    height: 24px;
+    width: 24px;
+}
+
+.score {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
