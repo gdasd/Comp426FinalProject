@@ -115,3 +115,26 @@ document.addEventListener('DOMContentLoaded', () => {
 let intervalID = window.setInterval(function() {
     moveDown('ArrowDown');
 }, 1000);
+
+
+
+
+let handleLogOutButtonPress = async function (event) {
+    try {
+    let s = await axios({
+        method: 'get',
+        url: 'http://localhost:3030/logout',
+      //  withCredentials: true,
+      });
+      window.location.href = "/index.html";
+    } catch(err) {
+        
+    }
+};
+
+
+$(async function() {    
+    $('.logout-button').on('click', (e) => {
+        handleLogOutButtonPress(e);
+    });
+});
