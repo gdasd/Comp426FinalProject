@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tetris 426</title>
+        <link rel="stylesheet" href="login.css" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="account.js"></script>
+    </head>
+
+    <body>
+        <div class="account">
+            <h1>Account Page</h1>
+            <div class="field">
+                <label class="label">Username</label>
+                <input class="input" type="text" placeholder="username" name="username" id="input-username" disabled>
+            </div>
+            <div class="field password-field">
+                <label class="label">Password</label>
+                <input class="input" type="password" placeholder="password" name="password" id="input-password" disabled>
+            </div>
+            <div class="password-change">
+                <button class="button-change">Change Password</button>
+                <div class="message"></div>
+            </div>
+            <div class="delete">
+                <input type="checkbox" id="delete" name="delete" value="Delete">
+                <label for="delete"> I want to delete my account</label>
+                <button class="button-delete">Delete Account</button> 
+        </div>
+    </body>
+</html>
