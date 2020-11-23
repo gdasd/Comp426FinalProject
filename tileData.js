@@ -456,4 +456,16 @@ export function createElementFromData(type, row, column) {
         newElement.clockwiseRotation = "3Lright90"
         return newElement
     }
+    if (type == "2box") {
+        newElement.type = "2box"
+        newElement.position = new Object()
+        newElement.position.row = row
+        newElement.position.column = column
+        newElement.occupancy = [[row, column], [row + 1, column], [row, column + 1], [row + 1, column + 1]]
+        newElement.height = 2
+        newElement.width = 2
+        newElement.clockwiseRotation = "2box"
+        return newElement
+    }
+
 }

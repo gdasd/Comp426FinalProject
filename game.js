@@ -52,7 +52,7 @@ export default class Game {
 
     //implement bias to randomly select one of eight possible starting tile configurations
     randomizeElement(row, column) {
-        let randomizer = Math.floor(Math.random() * 8)
+        let randomizer = Math.floor(Math.random() * 9)
         if (randomizer == 0) {
             return this.createElement("2line", row, column)
         }
@@ -76,6 +76,9 @@ export default class Game {
         }
         if (randomizer == 7) {
             return this.createElement("3Lright", row, column)
+        }
+        if (randomizer == 8) {
+            return this.createElement("2box", row, column)
         }
     }
 
@@ -393,8 +396,8 @@ export default class Game {
 
     //move down game board at spot of completing a row
     moveGameBoardDown(row) {
-        for (let i = row; i >= 0; i--) {
-            this.state.board[row] = [...this.state.board[row - 1]]
+        for (let i = row; i >= 1; i--) {
+            this.state.board[i] = [...this.state.board[i - 1]]
         }
         this.state.board[0] = new Array(this.width)
         //notify event listeners of game board change
