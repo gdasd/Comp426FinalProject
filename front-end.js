@@ -7,6 +7,23 @@ const score = document.querySelector('.score');
 let gridSquares = [];
 let gameOver = false;
 
+let renderLeaderboard = async function() {
+    let lead = $('<div class="leaderboard"></div>');
+    lead.append($('<div class="title">LeaderBoard</div>'));
+    let scoreList = $('<ol></ol>')
+    let result = await axios({
+        method: 'get',
+        url: 'http://localhost:3030/users',
+      //  withCredentials: true,
+      });
+      for (let i = 0; i < 50; i++) {
+        let score = $(`<li>${result.data[i]}</li>`);
+        scoreList.append(score);
+    }
+    lead.append(scoreList);
+    $(`.grid`).replaceWith(lead);
+}
+
 // Create the grid-based game board on the screen and load the Tetris pieces
 function createBoard(gameState) {
     let board = gameState.board;
@@ -52,7 +69,7 @@ function clearBoard() {
 }
 
 // Move the Tetris pieces on the screen when a button is pressed
-function move(direction) {
+async function move(direction) {
     if (!game.state.over) {
         switch (direction) {
             case 'ArrowRight' || 'Right':
@@ -90,19 +107,20 @@ function move(direction) {
             img.alt = "Game Over";
             document.querySelector('.header').appendChild(img);
             gameOver = true;
+            await renderLeaderboard();
         }
     }
 }
 
 // Call the move function when a key is pressed
-function keyDown(e) {
+async function keyDown(e) {
     e.preventDefault();
-    move(e.key);
+    await move(e.key);
 }
 
 // Made specifically for the Tetris pieces to automatically fall, this moves the pieces down
-function moveDown(down) {
-    move(down);
+async function moveDown(down) {
+    await move(down);
 }
 
 // Add event listeners to listen to key presses and to create the game board when the page is first loaded
@@ -112,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Automatically make the Tetris pieces on the screen fall every 1s
-let intervalID = window.setInterval(function() {
-    moveDown('ArrowDown');
+let intervalID = window.setInterval(async function() {
+    await moveDown('ArrowDown');
 }, 1000);
 
 
