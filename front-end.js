@@ -96,6 +96,7 @@ function move(direction) {
 
 // Call the move function when a key is pressed
 function keyDown(e) {
+    e.preventDefault();
     move(e.key);
 }
 

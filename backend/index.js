@@ -2,6 +2,10 @@ const express = require('express');
 
 const app = express();
 
+const cors = require('cors');
+
+
+
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
@@ -14,6 +18,8 @@ app.use(expressSession({
     saveUninitialized: false
 }))
 
+app.use(cors());
+
 const User = require("./login.js");
 
 const login_data = require('data-store')( {path: process.cwd() + '/data/users.json'} );
@@ -25,13 +31,14 @@ app.post('/user', (req, res) => {
         res.status(400).send("Unable to create user. Username already taken");
         return;
     }
-    return res.json(newUser);
+    res.json(newUser);
+    return;
 })
 
 app.post('/login', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-
+    console.log(req.body);
     let user_data = login_data.get(username);
     // console.log(user_data)
     if (user_data.username == null) {

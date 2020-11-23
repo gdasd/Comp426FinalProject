@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tetris 426</title>
         <link rel="stylesheet" href="login.css" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="logon.js"></script>
     </head>
 
     <body>
@@ -16,11 +19,17 @@
             <h1>Login</h1>
             <div class="field">
                 <label class="label">Username</label>
-                <input class="input" type="text" placeholder="username" name="username">
+                <input class="input" type="text" placeholder="username" name="username" id="input-username">
             </div>
             <div class="field">
                 <label class="label">Password</label>
-                <input class="input" type="password" placeholder="password" name="password">
+                <input class="input" type="password" placeholder="password" name="password" id="input-password">
+            </div>
+            <div class="buttons">
+                <button class="button-login">Log In</button>
+                <button class="button-create">Create Account</button> 
+            </div>
+            <div class="message">
             </div>
         </div>
     </body>
