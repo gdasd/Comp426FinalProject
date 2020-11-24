@@ -1,4 +1,4 @@
-# gdasd.github.io
+# Tetris 426 (gdasd.github.io)
 
 This project is a comprehensive online version of tetris that implements user accounts and an online connection to display a leaderboard for competition.
 
