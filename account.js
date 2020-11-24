@@ -40,7 +40,7 @@ let handleTrueChangeButtonPress = async function (event) {
     let result = await axios({
         method: 'put',
         url: `https://cryptic-hamlet-31330.herokuapp.com/userpass/${username}`,
-        withCredentials: true,
+        // withCredentials: true,
         data: {
          currentPassword: password, 
          pass: passwordnew,
@@ -60,7 +60,7 @@ let handleDeleteButtonPress = async function (event) {
             let s = await axios({
                 method: 'delete',
                 url: `https://cryptic-hamlet-31330.herokuapp.com/user/${username}`,
-                withCredentials: true,
+                // withCredentials: true,
               });
             window.location.href = "/index.html";
             } catch(err) {
@@ -73,7 +73,7 @@ $(async function() {
     let s = await axios({
         method: 'get',
         url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
-        withCredentials: true,
+        // withCredentials: true,
       });
       console.log(s);
     $('#input-username').val(s.data);
