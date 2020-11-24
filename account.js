@@ -91,6 +91,6 @@ $(async function() {
         handleDeleteButtonPress(e);
     });
     } catch(err) {
-        $('.account').replaceWith("Unauthorized. Please <a href='gdasd.github.io'log in</a> to access");
+        $('.account').replaceWith("Unauthorized. Please <a href='gdasd.github.io'>log in</a> to access");
     }
 });

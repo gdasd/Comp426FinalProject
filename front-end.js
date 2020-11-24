@@ -172,10 +172,11 @@ $(async function() {
             url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
             withCredentials: true,
           }); 
+          console.log(s);
     $('.logout-button').on('click', (e) => {
         handleLogOutButtonPress(e);
     });
 } catch(err) {
-    $('.account').replaceWith("Unauthorized. Please <a href='gdasd.github.io'log in</a> to access");
+    $('.page').replaceWith("Unauthorized. Please <a href='gdasd.github.io'>log in</a> to access");
 }
 });
