@@ -16,8 +16,8 @@ let renderLeaderboard = async function() {
         url: 'https://cryptic-hamlet-31330.herokuapp.com/users',
         withCredentials: true,
       });
-      for (let i = 0; i < 50; i++) {
-        let score2 = $(`<li>${result.data[i]}</li>`);
+      for (let i = 0; i < 10; i++) {
+        let score2 = $(`<li>${result.data[i].username} ${result.data[i].score}</li>`);
         scoreList.append(score2);
     }
     lead.append(scoreList);

@@ -45,3 +45,12 @@ body {
     justify-content: center;
     padding: 20px;
 }
+
+.leaderboard {
+    color: white;
+    text-align: center;
+}
+
+.title {
+    font-size: 16px;
+}
