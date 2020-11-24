@@ -17,8 +17,8 @@ let renderLeaderboard = async function() {
       //  withCredentials: true,
       });
       for (let i = 0; i < 50; i++) {
-        let score = $(`<li>${result.data[i]}</li>`);
-        scoreList.append(score);
+        let score2 = $(`<li>${result.data[i]}</li>`);
+        scoreList.append(score2);
     }
     lead.append(scoreList);
     $(`.grid`).replaceWith(lead);
@@ -107,6 +107,20 @@ async function move(direction) {
             img.alt = "Game Over";
             document.querySelector('.header').appendChild(img);
             gameOver = true;
+            let s = await axios({
+                method: 'get',
+                url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
+              //  withCredentials: true,
+              });
+            let username = s.data;
+            let updateScore = await axios({
+                method: 'put',
+                url: `https://cryptic-hamlet-31330.herokuapp.com/userscore/${username}`,
+              //  withCredentials: true,
+                data: {
+                 score: game.getGameState().score, 
+                },
+              });
             await renderLeaderboard();
         }
     }

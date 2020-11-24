@@ -16,7 +16,7 @@ let handleChangeButtonPress = async function (event) {
 let handleCancelButtonPress = async function (event) {
     let newfield = $(`<div class="field password-field">
     <label class="label">Password</label>
-    <input class="input" type="password" placeholder="password" name="password" id="input-password" disabled>
+    <input class="input" type="password" placeholder="password" value="password" name="password" id="input-password" disabled>
 </div>`);
     $('.password-field').replaceWith(newfield);
     let newbuttons = $(`<div class="password-change">
@@ -39,11 +39,11 @@ let handleTrueChangeButtonPress = async function (event) {
     try {
     let result = await axios({
         method: 'put',
-        url: `https://cryptic-hamlet-31330.herokuapp.com/user/${username}`,
+        url: `https://cryptic-hamlet-31330.herokuapp.com/userpass/${username}`,
       //  withCredentials: true,
         data: {
          currentPassword: password, 
-         password: passwordnew,
+         pass: passwordnew,
         },
       });
     handleCancelButtonPress(event);
@@ -70,6 +70,13 @@ let handleDeleteButtonPress = async function (event) {
 };
 
 $(async function() {    
+    let s = await axios({
+        method: 'get',
+        url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
+      //  withCredentials: true,
+      });
+      console.log(s);
+    $('#input-username').val(s.data);
     $('.account').on('click', '.button-change', (e) => {
         handleChangeButtonPress(e);
     });
