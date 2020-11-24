@@ -111,6 +111,7 @@ async function move(direction) {
             img.alt = "Game Over";
             document.querySelector('.header').appendChild(img);
             gameOver = true;
+            try {
             let s = await axios({
                 method: 'get',
                 url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
@@ -124,7 +125,8 @@ async function move(direction) {
                 data: {
                  score: game.getGameState().score, 
                 },
-              });
+              }); }
+              catch(err) {}
             await renderLeaderboard();
         }
     }
