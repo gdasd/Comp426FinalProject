@@ -9,4 +9,6 @@ Move the incoming block with the right and left arrow keys on your keyboard to a
 
 Youtube video: https://youtu.be/9KjjxNQoS04
 
+Visual Aid: https://drive.google.com/file/d/16woEJsIy5Ay6jFrtXvUhpksGVq6TLAgx/view?usp=sharing
+
 Repository for backend code: https://github.com/gdasd/backend
