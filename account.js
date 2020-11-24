@@ -39,7 +39,7 @@ let handleTrueChangeButtonPress = async function (event) {
     try {
     let result = await axios({
         method: 'put',
-        url: `http://localhost:3030/user/${username}`,
+        url: `https://cryptic-hamlet-31330.herokuapp.com/user/${username}`,
       //  withCredentials: true,
         data: {
          currentPassword: password, 
@@ -59,7 +59,7 @@ let handleDeleteButtonPress = async function (event) {
         try {
             let s = await axios({
                 method: 'delete',
-                url: `http://localhost:3030/user/${username}`,
+                url: `https://cryptic-hamlet-31330.herokuapp.com/user/${username}`,
               //  withCredentials: true,
               });
             window.location.href = "/index.html";

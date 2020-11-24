@@ -13,7 +13,7 @@ let renderLeaderboard = async function() {
     let scoreList = $('<ol></ol>')
     let result = await axios({
         method: 'get',
-        url: 'http://localhost:3030/users',
+        url: 'https://cryptic-hamlet-31330.herokuapp.com/users',
       //  withCredentials: true,
       });
       for (let i = 0; i < 50; i++) {

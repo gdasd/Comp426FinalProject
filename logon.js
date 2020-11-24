@@ -6,7 +6,7 @@ let handleLogInButtonPress = async function (event) {
     try {
     let s = await axios({
         method: 'post',
-        url: 'http://localhost:3030/login',
+        url: 'https://cryptic-hamlet-31330.herokuapp.com/login',
       //  withCredentials: true,
         data: {
             username: username, 
@@ -32,7 +32,7 @@ let handleCreateButtonPress = async function (event) {
     try {
     let s = await axios({
         method: 'post',
-        url: 'http://localhost:3030/user',
+        url: 'https://cryptic-hamlet-31330.herokuapp.com/user',
       //  withCredentials: true,
         data: {
             username: username, 
