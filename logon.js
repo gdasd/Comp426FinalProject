@@ -7,7 +7,7 @@ let handleLogInButtonPress = async function (event) {
     let s = await axios({
         method: 'post',
         url: 'https://cryptic-hamlet-31330.herokuapp.com/login',
-        // withCredentials: true,
+        withCredentials: true,
         data: {
             username: username, 
             password: password,
@@ -33,7 +33,7 @@ let handleCreateButtonPress = async function (event) {
     let s = await axios({
         method: 'post',
         url: 'https://cryptic-hamlet-31330.herokuapp.com/user',
-        // withCredentials: true,
+        withCredentials: true,
         data: {
             username: username, 
             password: password,
