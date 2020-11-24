@@ -62,9 +62,10 @@ let handleDeleteButtonPress = async function (event) {
                 url: `https://cryptic-hamlet-31330.herokuapp.com/user/${username}`,
                 withCredentials: true,
               });
-            window.location.href = "/index.html";
+            
             } catch(err) {
-                $('.message').replaceWith($('<div class="message"><h3>Unable to be deleted</h3></div>'));
+                //$('.message').replaceWith($('<div class="message"><h3>Unable to be deleted</h3></div>'));
+                window.location.href = "/index.html";
             }
     }
 };
