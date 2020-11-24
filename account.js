@@ -38,7 +38,7 @@ let handleTrueChangeButtonPress = async function (event) {
     }
     try {
     let result = await axios({
-        method: 'put',
+        method: 'post',
         url: `https://cryptic-hamlet-31330.herokuapp.com/userpass/${username}`,
         withCredentials: true,
         data: {
