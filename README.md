@@ -1,10 +1,4 @@
-Gameplay core/engine complete
-
-Required dependancies: esm, keypress (to test in console). 
-JQuery not utilized yet for engine but likely required for DOM. Axios likely required for backend implementation but not yet utilized in engine.
-
-Gameplay functions as intended in console-- lots of hours spent testing and making things work! Works with a dynamic board size (defined in constructor).
-
-Does not currently automatically move the board down due to inability to implement async functions in the core. This will require the DOM (Farris) to define an async function that moves the board down (move("down)) at a constant rate; recommend 300-500ms and see from there how fast that is.
-
-Colors are currently implemented via one of six variables in the core that can be used in the DOM to set a color. Originally only used the variable x but decided that would be difficult for the DOM to determine which elements should be which color. This way, while it looks weird in the console, the DOM can use conditional statements for each color variable and actually assign a color to the page in HTML.
+This project is a comprehensive online version of tetris that implements user accounts and an online connection to display a leaderboard for competition.
+APIs utilized: esm, jQuery, Axios, keypress (to test in console).  Each serves a different purpose in front-end or back-end operations.
+How to play:
+Move the incoming block with the WASD keys on your keyboard to align with other blocks on the screen. Rotate the block with the left and right arrow keys. Upon creating an entire row, it will be eliminated and free up more space. The objective is to eliminate the most blocks and keep the game going as long as possible.
