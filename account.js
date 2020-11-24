@@ -77,7 +77,7 @@ $(async function() {
         url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
         withCredentials: true,
       });
-      console.log(s);
+      
     $('#input-username').val(s.data);
     $('.account').on('click', '.button-change', (e) => {
         handleChangeButtonPress(e);

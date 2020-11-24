@@ -170,18 +170,9 @@ let handleLogOutButtonPress = async function (event) {
 
 
 $(async function() {   
-    try {    
-        let s = await axios({
-            method: 'get',
-            url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
-            withCredentials: true,
-          }); 
-          username_const = s.data;
-          console.log(s);
+
     $('.logout-button').on('click', (e) => {
         handleLogOutButtonPress(e);
     });
-} catch(err) {
-    $('.page').replaceWith("<div style='color:white'>Unauthorized. Please <a href='index.html'>log in</a> to access</div>");
-}
+
 });
