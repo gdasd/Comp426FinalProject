@@ -14,7 +14,7 @@ let handleLogInButtonPress = async function (event) {
         },
       });
     console.log(s.data);
-    //window.location.href = "/tetris.html";
+    window.location.href = "/tetris.html";
     } catch(err) {
         $('.message').replaceWith($('<div class="message"><h3>Incorrect Username or Password</h3></div>'));
     }
