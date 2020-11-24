@@ -177,6 +177,6 @@ $(async function() {
         handleLogOutButtonPress(e);
     });
 } catch(err) {
-    $('.page').replaceWith("<div style='color:white'>Unauthorized. Please <a href='gdasd.github.io'>log in</a> to access</div>");
+    $('.page').replaceWith("<div style='color:white'>Unauthorized. Please <a href='index.html'>log in</a> to access</div>");
 }
 });
