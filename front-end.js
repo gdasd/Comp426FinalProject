@@ -6,6 +6,7 @@ const grid = document.querySelector('.grid');
 const score = document.querySelector('.score');
 let gridSquares = [];
 let gameOver = false;
+let username_const = "";
 
 let renderLeaderboard = async function() {
     let lead = $('<div class="leaderboard"></div>');
@@ -15,6 +16,9 @@ let renderLeaderboard = async function() {
         method: 'get',
         url: 'https://cryptic-hamlet-31330.herokuapp.com/users',
         withCredentials: true,
+        data: {
+            username: username_const, 
+           },
       });
       for (let i = 0; i < 10; i++) {
         let score2 = $(`<li>${result.data[i].username} ${result.data[i].score}</li>`);
@@ -172,6 +176,7 @@ $(async function() {
             url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
             withCredentials: true,
           }); 
+          username_const = s.data;
           console.log(s);
     $('.logout-button').on('click', (e) => {
         handleLogOutButtonPress(e);
