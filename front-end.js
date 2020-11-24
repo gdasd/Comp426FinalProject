@@ -141,7 +141,7 @@ let handleLogOutButtonPress = async function (event) {
     try {
     let s = await axios({
         method: 'get',
-        url: 'http://localhost:3030/logout',
+        url: 'https://cryptic-hamlet-31330.herokuapp.com/logout',
       //  withCredentials: true,
       });
       window.location.href = "/index.html";
