@@ -147,13 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
     createBoard(game.getGameState());
 })
 
-// Automatically make the Tetris pieces on the screen fall every 1s
+// Automatically make the Tetris pieces on the screen fall at a constant rate
 let intervalID = window.setInterval(async function() {
     await moveDown('ArrowDown');
-}, 500);
-
-
-
+}, 300);
 
 let handleLogOutButtonPress = async function (event) {
     try {
@@ -167,7 +164,6 @@ let handleLogOutButtonPress = async function (event) {
         
     }
 };
-
 
 $(async function() {   
 
