@@ -165,8 +165,17 @@ let handleLogOutButtonPress = async function (event) {
 };
 
 
-$(async function() {    
+$(async function() {   
+    try {    
+        let s = await axios({
+            method: 'get',
+            url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
+            withCredentials: true,
+          }); 
     $('.logout-button').on('click', (e) => {
         handleLogOutButtonPress(e);
     });
+} catch(err) {
+    $('.account').replaceWith("Unauthorized. Please <a href='gdasd.github.io'log in</a> to access");
+}
 });

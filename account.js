@@ -69,7 +69,8 @@ let handleDeleteButtonPress = async function (event) {
     }
 };
 
-$(async function() {    
+$(async function() {
+    try {    
     let s = await axios({
         method: 'get',
         url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
@@ -89,4 +90,7 @@ $(async function() {
     $('.button-delete').on('click', (e) => {
         handleDeleteButtonPress(e);
     });
+    } catch(err) {
+        $('.account').replaceWith("Unauthorized. Please <a href='gdasd.github.io'log in</a> to access");
+    }
 });
