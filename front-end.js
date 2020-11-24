@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Automatically make the Tetris pieces on the screen fall every 1s
 let intervalID = window.setInterval(async function() {
     await moveDown('ArrowDown');
-}, 1000);
+}, 500);
 
 
 
