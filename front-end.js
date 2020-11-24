@@ -14,7 +14,7 @@ let renderLeaderboard = async function() {
     let result = await axios({
         method: 'get',
         url: 'https://cryptic-hamlet-31330.herokuapp.com/users',
-        withCredentials: true,
+        // withCredentials: true,
       });
       for (let i = 0; i < 50; i++) {
         let score2 = $(`<li>${result.data[i]}</li>`);
@@ -110,13 +110,13 @@ async function move(direction) {
             let s = await axios({
                 method: 'get',
                 url: `https://cryptic-hamlet-31330.herokuapp.com/username`,
-                withCredentials: true,
+                // withCredentials: true,
               });
             let username = s.data;
             let updateScore = await axios({
                 method: 'put',
                 url: `https://cryptic-hamlet-31330.herokuapp.com/userscore/${username}`,
-                withCredentials: true,
+                // withCredentials: true,
                 data: {
                  score: game.getGameState().score, 
                 },
